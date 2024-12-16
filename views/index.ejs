@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+    <div>
+        <form action="/create" method="post">
+            <input class="block bg-zinc-900 w-2/4 mt-7 ml-5 px-6 py-2 rounded-lg text-zinc-200" type="text"
+                placeholder="title " required name="title3">
+            <textarea class="block bg-zinc-900  w-2/4 mt-4 ml-5 px-6 py-2 rounded-lg resize-none text-zinc-200"
+                placeholder="enter content here" name="content3"></textarea>
+            <button class="bg-blue-400 px-7 mt-3 rounded-lg ml-5 py-2">create task</button>
+        </form>
+        <div class="cardz flex flex-wrap gap-5">
+            <% if(files.length>0){%>
+
+                <% files.forEach((val)=>{%>
+                    <div
+                        class="cards w-72 bg-zinc-800 ml-5 mr-4 mt-4 px-2 py-2 inline  tracking-tighter rounded-md text-zinc-400">
+                       <h1 class="text-2xl"><%= val.split('.').shift()%></h1>
+                        <a class="text-blue-400 " href="/read">read more</a>
+                    </div>
+                    <% })%>
+                        <%} else{ %>
+                            <h3 class="text-zinc-500">NO tasks</h3>
+                            <% }%>
+
+
+
+
+        </div>
+    </div>
+    <div class="container">
+
+    </div>
+    <script src="https://cdn.tailwindcss.com"></script>
+</body>
+
+</html>
